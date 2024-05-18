@@ -1,3 +1,3 @@
 # mlops-zoomcap
 
-Testing working with codesapce from local vscode
+Testing codesapce use from local vscode
