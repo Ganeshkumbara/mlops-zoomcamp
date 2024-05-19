@@ -1,3 +1,3 @@
 # mlops-zoomcap
 
-Testing codesapce use from local vscode
+Building a model to predict distance between pickup and droplocation, using github codespace | conda env | vs code | jupyter
