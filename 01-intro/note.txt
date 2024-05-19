@@ -1,0 +1,4 @@
+one-hot encoding
+
+changing categorical variable into numberical variable
+
