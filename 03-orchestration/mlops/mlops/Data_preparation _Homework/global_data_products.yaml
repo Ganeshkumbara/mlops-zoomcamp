@@ -1,0 +1,27 @@
+latest_xgboost:
+  object_type: pipeline
+  object_uuid: xgboost
+  project: 'Data_preparation '
+  repo_path: '/home/src/mlops/Data_preparation '
+  settings:
+    xgboost:
+      partitions: 1
+new_gdp_set:
+  object_type: pipeline
+  object_uuid: prepare_data
+  outdated_after:
+    seconds: 598
+  project: 'Data_preparation '
+  repo_path: '/home/src/mlops/Data_preparation '
+  settings:
+    build: {}
+new_xgboost:
+  object_type: pipeline
+  object_uuid: xgboost
+  outdated_starting_at:
+    hour_of_day: 12
+  project: 'Data_preparation '
+  repo_path: '/home/src/mlops/Data_preparation '
+  settings:
+    xgboost:
+      partitions: 1

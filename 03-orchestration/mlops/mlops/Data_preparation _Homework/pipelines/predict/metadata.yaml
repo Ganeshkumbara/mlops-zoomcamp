@@ -1,0 +1,81 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: Data_preparation /markdowns/online_inference_guid.md
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: markdown
+  name: online_inference_guid
+  retry_config: null
+  status: updated
+  timeout: null
+  type: markdown
+  upstream_blocks: []
+  uuid: online_inference_guid
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: Data_preparation /global_data_products/model/dv.py
+    global_data_product:
+      uuid: latest_xgboost
+  downstream_blocks:
+  - inference
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: model/dv
+  retry_config: null
+  status: executed
+  timeout: null
+  type: global_data_product
+  upstream_blocks: []
+  uuid: model/dv
+- all_upstream_blocks_executed: true
+  color: teal
+  configuration:
+    file_source:
+      path: Data_preparation /custom/inference.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: inference
+  retry_config: null
+  status: executed
+  timeout: null
+  type: custom
+  upstream_blocks:
+  - model/dv
+  uuid: inference
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-06-06 17:13:13.921603+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: predict
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags:
+- predict
+type: python
+uuid: predict
+variables_dir: '/home/src/mage_data/Data_preparation '
+widgets: []

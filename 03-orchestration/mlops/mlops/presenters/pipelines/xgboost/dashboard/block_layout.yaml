@@ -1,0 +1,51 @@
+blocks:
+  shap_force_plot:
+    configuration:
+      chart_type: custom
+    data_source:
+      block_uuid: dashboard_dataset
+      pipeline_schedule_id: null
+      pipeline_uuid: xgboost
+      type: block
+    error: null
+    name: shap force plot
+    name_new: shap force plot
+    skip_render: false
+    type: chart
+    uuid: shap_force_plot
+  shap_values_chart:
+    configuration:
+      chart_type: custom
+    data_source:
+      block_uuid: dashboard_dataset
+      pipeline_schedule_id: null
+      pipeline_uuid: xgboost
+      type: block
+    error: null
+    name: Shap values chart
+    name_new: Shap values chart
+    skip_render: false
+    type: chart
+    uuid: shap_values_chart
+  shap_values_chatzz:
+    configuration:
+      chart_type: custom
+    data_source:
+      block_uuid: dashboard_dataset
+      pipeline_schedule_id: null
+      pipeline_uuid: xgboost
+      type: block
+    error: null
+    name: SHAP values chatzz
+    skip_render: false
+    type: chart
+    uuid: shap_values_chatzz
+layout:
+- - block_uuid: shap_values_chart
+    height: 400
+    width: 0
+  - block_uuid: shap_values_chatzz
+    height: 400
+    width: 0
+- - block_uuid: shap_force_plot
+    width: 1

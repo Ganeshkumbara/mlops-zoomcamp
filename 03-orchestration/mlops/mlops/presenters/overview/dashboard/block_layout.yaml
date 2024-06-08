@@ -1,0 +1,111 @@
+blocks:
+  distribution_of_performance_metrics:
+    configuration:
+      chart_type: histogram
+      group_by:
+      - rmse_Booster
+      x_axis_label_format: return value.toFixed(3)
+      x_tooltip_label_format: return 2
+      y_tooltip_label_format: 'const [xMin, xMax] = values.values;
+
+        return `${xMin.toFixed(3)} to ${xMax.toFixed(3)}`'
+    data_source:
+      type: chart_code
+    error: null
+    name: Distribution of performance metrics
+    skip_render: false
+    type: chart
+    uuid: distribution_of_performance_metrics
+  prismatic_silversmith:
+    name: prismatic silversmith
+    type: chart
+    uuid: prismatic_silversmith
+  runs_by_model__pie_chart_:
+    configuration:
+      chart_type: histogram
+    data_source:
+      block_uuid: xgboost
+      pipeline_schedule_id: null
+      pipeline_uuid: xgboost
+      type: block
+    error: null
+    name: Runs by model (Pie chart)
+    name_new: Runs by model (Pie chart)
+    skip_render: false
+    type: chart
+    uuid: runs_by_model__pie_chart_
+  spectacular_ring:
+    name: spectacular ring
+    type: chart
+    uuid: spectacular_ring
+  time_series__mse_:
+    configuration:
+      chart_type: time series bar chart
+      group_by:
+      - start_time
+      metrics:
+      - aggregation: average
+        column: mse_Booster
+      - aggregation: average
+        column: mse_LinearRegression
+      - aggregation: average
+        column: mse_Lasso
+      time_interval: hour
+      x_axis_label_format: h
+    data_source:
+      type: chart_code
+    error: null
+    name: Time series (MSE)
+    name_new: Time series (MSE)
+    skip_render: false
+    type: chart
+    uuid: time_series__mse_
+  total_runs_by_model:
+    configuration:
+      chart_style: horizontal
+      chart_type: bar chart
+      group_by:
+      - model
+      metrics:
+      - aggregation: count_distinct
+        column: run_uuid
+      y_sort_order: descending
+      y_tooltip_label_format: return `${value} total runs`
+    data_source:
+      type: chart_code
+    error: null
+    name: Total runs by model
+    skip_render: false
+    type: chart
+    uuid: total_runs_by_model
+  training_metric__rmse_:
+    configuration:
+      chart_type: time series line chart
+      group_by:
+      - start_time
+      metrics: []
+      time_interval: minute
+    data_source:
+      type: chart_code
+    error: null
+    name: Training metric (RMSE)
+    skip_render: false
+    type: chart
+    uuid: training_metric__rmse_
+layout:
+- - block_uuid: time_series__mse_
+    height: 400
+    width: 2
+- - block_uuid: total_runs_by_model
+    width: 1
+  - block_uuid: distribution_of_performance_metrics
+    max_width_percentage: 0
+    width: 2
+  - block_uuid: runs_by_model__pie_chart_
+    width: 1
+- - block_uuid: training_metric__rmse_
+    width: 1
+- - block_uuid: spectacular_ring
+    width: 1
+- - block_uuid: prismatic_silversmith
+    width: 1
