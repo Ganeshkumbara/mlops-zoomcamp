@@ -3,7 +3,7 @@ blocks:
   color: null
   configuration:
     file_source:
-      path: Data_preparation /sensors/detect_new_data.py
+      path: null
   downstream_blocks:
   - retrain/sklearn
   executor_config: null
@@ -21,7 +21,7 @@ blocks:
   color: yellow
   configuration:
     file_source:
-      path: Data_preparation /custom/retrain/sklearn.py
+      path: null
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
@@ -58,5 +58,5 @@ tags:
 - retraining
 type: python
 uuid: automatic_retraining
-variables_dir: '/home/src/mage_data/Data_preparation '
+variables_dir: /home/src/mage_data/Data_preparation _Homework
 widgets: []
